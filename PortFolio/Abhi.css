@@ -1,0 +1,75 @@
+body{
+    font-family: sans-serif;
+    background-color: lightgrey;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.det{
+    min-height: 150px;
+    background-color: gainsboro;
+    margin-top: -30px;
+    padding-top: 25px;
+}
+.navbar{
+    background-color: darkblue;
+    padding-top: 20px;
+}
+.navbar-brand{
+    font-size: 25px;
+    padding-left: 15px;
+    text-decoration: none;
+}
+.nav{
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+.jumbotron{
+  padding-top: 300px;
+  background:url('img/showcase.jpg') no-repeat ;
+  width: 100%;
+  min-height: 600px;
+  background-size: cover;
+}
+.content{
+    margin-top: 15px;
+    margin-left: 45px;
+    width: auto;
+}
+.database{
+    margin-left: 20px;
+}
+.about{
+    font-size: 0.85em;
+}
+.about h3{
+    margin-top: 20px; 
+}
+.about li{
+    line-height: 1.8;
+    font-size: 1.2em;
+}
+.profile{
+    margin-top: 2em;
+    text-decoration: underline;
+}
+.prof{
+    margin-top: 2em;
+}
+.prof li{
+    font-size: 1.2em;
+    line-height:2em; 
+}
+.contact{
+    margin-top: 10px;
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+footer{
+    background-color: grey;
+    text-align: center;
+    margin-top: 25px;
+    color: white;
+    padding: 10px;
+}
