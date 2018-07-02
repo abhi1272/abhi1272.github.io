@@ -1,0 +1,80 @@
+:root{
+	font-size: 16px;
+}
+body{
+	 background-color: lightblue;
+	 margin-top: 2em;
+	 line-height: 1;
+}
+h2{
+	text-align: ;
+}
+p{
+	font-size: 2rem;
+}
+.name{
+	font-size: 1.4rem;
+	font-weight: 50;
+	margin-bottom: 0.2rem;
+}
+.text{
+	font-size: 1.2rem;
+	margin-left: 5vw;
+	margin-top: 0vh;
+	font-family: sans-serif;
+}
+.icon{
+	width: 10vw;
+	height: 12vh;
+	padding-right: 2vw;
+	padding: 0;
+}
+input[type=text] {
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    width: 100%;
+}
+img{
+	border-radius: 9vw;
+	height: 8vh;	
+}
+.unread{
+	color: blue;
+}
+.lastseen{
+	margin-left: 5vw;
+	margin-top: -4	vh;
+}
+.chatmsg{
+	margin-left: 25vw;
+	margin-top: 5vh;
+	font-size: 1.4rem;
+	font-family: sans-serif;
+	background-color: ;
+}
+.chatmsg1{
+	margin-left: 2vw;
+	margin-top: 5vh;
+	font-size: 1.4rem;
+	font-family: sans-serif;
+	background-color: white;
+	width: 70%
+}
+input[type=text]{
+	margin-top: 4.8rem;
+	width: 72%
+}
+.dis{
+	margin-left: 4vw;
+	margin-top: 2vh;
+}
+.box{
+    width:	140%;
+    border: 1px;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: white;
+}
