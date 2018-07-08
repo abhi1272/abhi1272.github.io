@@ -1,0 +1,146 @@
+:root{
+    font-size: 12px;
+}
+
+.parent{
+    background: tomato;
+    height: 100vh;
+    width: 60vw;
+}
+.child{
+    background: lime;
+    height: 50vh;
+    width: 60vw;
+}
+button{
+	background-color: blue;
+	font-size: 1.5em;
+	margin-left: 0.2vw;
+	padding: 0.5vw;
+	color: white;
+	margin-top: 5vh;
+}
+div{
+	font-family: sans-serif;
+	border: 1px solid;
+	margin: 1vh;
+	padding: 1vw;
+}
+.toggle-nav {
+	display:none;
+}
+/*----- Menu -----*/
+@media screen and (min-width: 620px) {
+	.menu {
+	display: flex;
+	width:100%;
+	padding:1vw;
+	background:#D3D3D3;
+	}
+}
+.menu ul {
+	display:inline-block;
+}
+.menu li {
+	margin:0px 50px 0px 0px;
+	display: inline-block;
+	font-size:17px;
+}
+
+.menu li:last-child {
+	margin-right:0px;
+}
+
+.menu a {
+	text-decoration: none;
+	transition:color linear 0.15s;
+}
+
+.menu a:hover, .menu .current-item a {
+	color:#66a992;
+}
+
+/*----- Responsive -----*/
+
+@media screen and (max-width: 620px) {
+	.menu {
+		position:relative;
+		display:inline-block;
+	}
+	.menu ul.active {
+		display:none;
+	}
+	.menu ul {
+		width:100%;
+		position:absolute;
+		top:120%;
+		padding: 1em;
+		background:#D3D3D3;
+	}
+	.menu ul:after {
+		width:0px;
+		height:0px;
+		position:absolute;
+	}
+	.menu li {
+		margin:10px 0px 5px 0px;
+		float:none;
+		display:block;
+	}
+	.menu a {
+		display:block;
+	}
+	.toggle-nav {
+		margin-bottom: 4vh;
+		padding:1.4em;
+		float:right;
+		display:inline-block;
+		background-color: grey;
+		font-size:1.2em;
+		transition:color linear 0.30s;
+	}
+
+	.toggle-nav:hover, .toggle-nav.active {
+		text-decoration:none;
+		color:#66a992;
+	}
+}
+
+/* The Modal (background) */
+.modal {
+	display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 1.2em;
+    color: red;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
