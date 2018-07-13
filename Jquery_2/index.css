@@ -1,0 +1,67 @@
+:root{
+	font-size: 16px;
+}
+body{
+    background-color: #5BC8AC;
+    
+}
+h3 { color: #7c795d; 
+	font-family: 'Trocchi',serif; 
+	font-size: 2.5em; 
+    font-weight: normal; 
+    line-height: 1.6em; 
+    margin: 0; 
+}
+.heading{
+	font-size: 1.3em;
+	font-family: sans-serif;
+	margin: 0 0 0 -1.5vw;
+	color: orange;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    background-color: grey;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.card{
+    margin: 2vh 0 0 -1vw;
+    background-color:#98DBC6;
+}
+
+section{
+    margin: 4vh 0 0 10vw;
+}
+.defaultHeight{
+    width: 80vw;
+}
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2vh 0 2vw 0;
+    font-size: 1.6rem;
+}
+table tr td {
+    border: 1px solid #ddd;
+    padding: 2vh 0 1vh 2vw;
+    font-family: Georgia;
+}
+table td{
+    line-height: 5vh
+}

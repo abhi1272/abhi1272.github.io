@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <title>JSON</title>
+
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	    <link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	<body>
+		<div class="container">
+			<h3>Fecth Details of The Movie</h3>
+			<div class="row">
+				<select class="col-xs col-sm-2">
+					  <option value="title">Title</option>
+					  <option value="Name">Name</option>
+					  <option value="Name & Year">Name & Year</option>
+				</select>
+				<input class="col-xs col-sm-4 search" type="text" placeholder="Enter the Title..." />
+				<input type="text" class="col-xs col-sm-4 year" name="" placeholder="Enter the Year...">
+				<button class="col-xs col-sm-2 " type="submit">Submit</button>
+			</div>
+			<div class="row fullcard">
+				<div class="col-xs col-sm-4">
+					<div class="card" style="width: 18rem;">
+					  <div id="coverPhoto" class="card-img-top">
+					   </div>
+					  <div class="card-body">
+					  	<div class="row">
+					  		 <h5 class="col card-title">Card title</h5>
+					  		 <h4 class="col rating">Rating</h4>		
+					  	</div>
+					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  </div>
+					</div>
+				</div>
+				<div class="col-xs col-sm-8 full">
+					<table class="table-responsive">
+						<tr>
+							<td>Director</td>
+							<td class="Director"></td>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td class="Actors"></td>
+						</tr>
+						<tr>
+							<td>Released</td>
+							<td class="Released"></td>
+						</tr>
+						<tr>
+							<td>Runtime</td>
+							<td class="Runtime"></td>
+						</tr>
+						<tr>
+							<td>Country</td>
+							<td class="Country"></td>
+						</tr>
+						<tr>
+							<td>Genre</td>
+							<td class="Genre"></td>
+						</tr>
+						<tr>
+							<td>Language</td>
+							<td class="Language"></td>
+						</tr>
+						<tr>
+							<td>imdbID</td>
+							<td class="imdbID"></td>
+						</tr>
+						<tr>
+							<td>imdbVotes</td>
+							<td class="imdbVotes"></td>
+						</tr>
+						<tr>
+							<td>DVD</td>
+							<td class="DVD"></td>
+						</tr>
+					</table>
+			</div>
+			
+		</div>
+
+
+		<script src="jquery-3.3.1.min.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
