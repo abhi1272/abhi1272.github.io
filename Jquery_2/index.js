@@ -1,19 +1,23 @@
 $("document").ready(() => {
 
+
 	$('button').addClass('pick')
+	$(".fullcard").hide();
+	$('.loader').hide()
 	$('.year').hide()
+	
 
 	$(function() {
 	    $("select").change(function() {
 	        if ($('option:selected', this).text() === 'Title' ){
-	        	$('.search').attr('placeholder','Enter the Title...');
+	        	$('.search').attr('placeholder','Enter the ID...');
 	        	$('button').addClass("btn1")
 	        	$('button').removeClass('pick btn2 btn3')
 	        	$('.year').hide()				
 	        }
 
 	        if($('option:selected', this).text() === 'Name' ){
-	        	$('.search').attr('placeholder','Enter the Name...');	
+	        	$('.search').attr('placeholder','Enter the Movie Name...');	
 	     	  	$('.year').hide()
 	     	  	$('button').addClass("btn2")
 	        	$('button').removeClass('pick btn1 btn3')
@@ -91,11 +95,6 @@ $("document").ready(() => {
 			})
 
 
-
-
-
-	$(".fullcard").hide();
-
 //	$("input").focusin(()  => {
 //		$(".fullcard").hide();
 //	})
@@ -116,8 +115,16 @@ function fetchByTitle(title){
 		},
 		error: (data) => {
 			alert("some error occured");
-		}
+		},
+		 beforeSend: () => { // while request is processing.
 
+		 	$('.loader').show()
+
+        },
+        complete: () => {
+
+            $('.loader').hide()
+        }
 
 	});
 }
@@ -137,7 +144,16 @@ function fetchByMovieName(movieName){
 		},
 		error: (data) => {
 			alert("some error occured");
-		}
+		},
+		 beforeSend: () => { // while request is processing.
+
+		 	$('.loader').show()
+
+        },
+        complete: () => {
+
+            $('.loader').hide()
+        }
 
 	});
 }
@@ -157,7 +173,16 @@ function fetchByMovieAndTitleName(Name,year){
 		},
 		error: (data) => {
 			alert("some error occured");
-		}
+		},
+		 beforeSend: () => { // while request is processing.
+
+		 	$('.loader').show()
+
+        },
+        complete: () => {
+
+            $('.loader').hide()
+        }
 
 	});
 }
