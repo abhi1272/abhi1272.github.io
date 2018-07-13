@@ -10,7 +10,7 @@ $("document").ready(() => {
 	$(function() {
 	    $("select").change(function() {
 	        if ($('option:selected', this).text() === 'Title' ){
-	        	$('.search').attr('placeholder','Enter the ID...');
+	        	$('.search').attr('placeholder','Enter the Id...');
 	        	$('button').addClass("btn1")
 	        	$('button').removeClass('pick btn2 btn3')
 	        	$('.year').hide()				
@@ -115,6 +115,7 @@ function fetchByTitle(title){
 		},
 		error: (data) => {
 			alert("some error occured");
+			$('.loader').hide()
 		},
 		 beforeSend: () => { // while request is processing.
 
@@ -143,6 +144,7 @@ function fetchByMovieName(movieName){
 
 		},
 		error: (data) => {
+			$('.loader').hide()
 			alert("some error occured");
 		},
 		 beforeSend: () => { // while request is processing.
@@ -173,6 +175,7 @@ function fetchByMovieAndTitleName(Name,year){
 		},
 		error: (data) => {
 			alert("some error occured");
+			$('.loader').hide()
 		},
 		 beforeSend: () => { // while request is processing.
 
@@ -193,6 +196,7 @@ function getDetails(data){
 	if(data.Response === 'False'){
 				alert(data.Error)
 				$(".fullcard").hide();
+				$('.loader').hide()
 			}
 			else{
 				$(".fullcard").show();	
