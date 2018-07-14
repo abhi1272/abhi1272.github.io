@@ -202,7 +202,14 @@ function getDetails(data){
 				$(".fullcard").show();	
 			}
 
-			$('#coverPhoto').html('<img src="' + data.Poster + '" class="img-fluid profileHeight"/>')
+			if(data.Poster !== 'N/A'){
+				$('#coverPhoto').html('<img src="' + data.Poster + '" class="img-fluid profileHeight"/>')
+			}
+			else{
+				$('#coverPhoto').html('<img src="' + 'https://www.jakartaplayers.org/uploads/1/2/5/5/12551960/2297419_orig.jpg' + '" class="img-fluid defaultHeight"/>')
+			}
+
+			
 
 			$(".card-title").text(data.Title)
 
