@@ -1,11 +1,11 @@
 $("document").ready(() => {
 
-
 	$('button').addClass('pick')
 	$(".fullcard").hide();
 	$('.loader').hide()
 	$('.year').hide()
 	
+// validate the option 
 
 	$(function() {
 	    $("select").change(function() {
@@ -33,6 +33,8 @@ $("document").ready(() => {
 	    });
 	});	
 
+// Click for Movie ID
+
 	$(document).on('click', ".pick",() => {
 		if($('.search').val() === undefined || $('.search').val() === "" ||
 			$('.search').val() === null){
@@ -45,6 +47,9 @@ $("document").ready(() => {
 	  		});
 	  	}
 	})
+
+
+// Click for Movie ID
 
 	$(document).on('click', ".btn1",() => {
 					if($('.search').val() === undefined || $('.search').val() === "" ||
@@ -60,6 +65,8 @@ $("document").ready(() => {
 				})		
 
 
+// Click for Movie Name
+
 	$(document).on('click', ".btn2",() => {
 				if($('.search').val() === undefined || $('.search').val() === "" ||
 					$('.search').val() === null){
@@ -73,6 +80,8 @@ $("document").ready(() => {
 	  				});
 				}
 			})
+
+// Click for Movie Name and Release year
 
 	$(document).on('click', ".btn3",() => {
 			
@@ -102,6 +111,8 @@ $("document").ready(() => {
 
 });
 
+// Fuction call fetch data by Title
+
 function fetchByTitle(title){
 
 	$.ajax({
@@ -129,6 +140,8 @@ function fetchByTitle(title){
 
 	});
 }
+
+// Fuction call fetch data by Movie Name
 
 function fetchByMovieName(movieName){
 
@@ -159,6 +172,8 @@ function fetchByMovieName(movieName){
 
 	});
 }
+
+// Fuction call fetch data by Movie Name And Release Year
 
 function fetchByMovieAndTitleName(Name,year){
 
@@ -191,6 +206,8 @@ function fetchByMovieAndTitleName(Name,year){
 }
 
 
+// Get all Details of the Movie 
+
 function getDetails(data){
 
 	if(data.Response === 'False'){
@@ -202,31 +219,96 @@ function getDetails(data){
 				$(".fullcard").show();	
 			}
 
+
+// Validation 
+
 			if(data.Poster !== 'N/A'){
 				$('#coverPhoto').html('<img src="' + data.Poster + '" class="img-fluid profileHeight"/>')
 			}
 			else{
-				$('#coverPhoto').html('<img src="' + 'https://www.jakartaplayers.org/uploads/1/2/5/5/12551960/2297419_orig.jpg' + '" class="img-fluid defaultHeight"/>')
+				$('#coverPhoto').html('<img src="' + 'https://www.nettv4u.com/uploads/entethallatha-kaaranathal-movie-review.jpg' + '" class="img-fluid defaultHeight"/>')
 			}
 
 			
-
-			$(".card-title").text(data.Title)
-
-			$(".rating").text(data.Ratings[0].Value)
-
-			$(".card-text").text(data.Plot)
-
-			$('.Director').text(data.Director)
-			$('.Actors').text(data.Actors)
-			$('.Country').text(data.Country)
-			$('.Genre').text(data.Genre)
-			$('.Language').text(data.Language)
-			$('.imdbID').text(data.imdbID)
-			$('.imdbVotes').text(data.imdbVotes)
-			$('.Released').text(data.Released)
-			$('.Runtime').text(data.Runtime)
-			$('.DVD').text(data.DVD)
+			if(data.Title === undefined || data.Title === "" || data.Title === null){
+						$(".card-title").text('N/A')
+			}
+			else{
+				$(".card-title").text(data.Title)
+			}
+			if(data.Ratings[0] === undefined || data.Ratings[0] === "" || data.Ratings[0] === null){
+					$(".rating").text('Rating: N/A')		
+			}
+			else{
+				$(".rating").text(data.Ratings[0].Value)
+			}
+			if(data.Plot === undefined || data.Plot === "" || data.Plot === null){
+				$(".card-text").text('N/A')
+			}
+			else{
+				$(".card-text").text(data.Plot)
+			}
+			if(data.Director === undefined || data.Director === "" || data.Director === null){
+				$('.Director').text('N/A')
+			}
+			else{
+				$('.Director').text(data.Director)
+			}
+			if(data.Actors === undefined || data.Actors === "" || data.Actors === null){
+				$('.Actors').text('N/A')
+			}
+			else{
+				$('.Actors').text(data.Actors)
+			}
+			if(data.Country === undefined || data.Country === "" || data.Country === null){
+				$('.Country').text('N/A')
+			}
+			else{
+				$('.Country').text(data.Country)
+			}
+			if(data.Genre === undefined || data.Genre === "" || data.Genre === null){
+				$('.Genre').text('N/A')
+			}
+			else{
+				$('.Genre').text(data.Genre)
+			}
+			if(data.Language === undefined || data.Language === "" || data.Language === null){
+				$('.Language').text('N/A')
+			}
+			else{
+				$('.Language').text(data.Language)
+			}
+			if(data.imdbID === undefined || data.imdbID === "" || data.imdbID === null){
+				$('.imdbID').text('N/A')
+			}
+			else{
+				$('.imdbID').text(data.imdbID)
+			}
+			if(data.imdbVotes === undefined || data.imdbVotes === "" || data.imdbVotes === null){
+				$('.imdbVotes').text('N/A')
+			}
+			else{
+				$('.imdbVotes').text(data.imdbVotes)
+			}
+			if(data.Released === undefined || data.Released === "" || data.Released === null){
+				$('.Released').text('N/A')
+			}
+			else{
+				$('.Released').text(data.Released)
+			}
+			if(data.Runtime === undefined || data.Runtime === "" || data.Runtime === null){
+				$('.Runtime').text('N/A')
+			}
+			else{
+				$('.Runtime').text(data.Runtime)
+			}
+			if(data.DVD === undefined || data.DVD === "" || data.DVD === null){
+				$('.DVD').text('N/A')
+			}
+			else{
+				$('.DVD').text(data.DVD)
+			}
+			
 }
 
 
