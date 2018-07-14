@@ -6,7 +6,7 @@
 
 	    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
-	    <title>OMDB</title>
+	    <title>Fetch Your Movie</title>
 
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -14,15 +14,15 @@
 	</head>
 	<body>
 		<div class="container">
-			<h3>Fecth Details of The Movie</h3>
+			<h3>Fetch Details of The Movie</h3>
 			<div class="row">
 				<select class="col-xs col-sm-2">
-					  <option value="title">Title</option>
-					  <option value="Name">Name</option>
-					  <option value="Name & Year">Name & Year</option>
+					  <option value="title">Movie Id</option>
+					  <option value="Name">Movie Name</option>
+					  <option value="Name & Year">Movie & Release Year</option>
 				</select>
 				<input class="col-xs col-sm-4 search" type="text" placeholder="Enter the Id..." />
-				<input type="text" class="col-xs col-sm-4 year" name="" placeholder="Enter the Year...">
+				<input type="text" class="col-xs col-sm-4 year" name="" placeholder="Enter the Release Year...">
 				<button class="col-xs col-sm-2 " type="submit">Submit</button>
 			</div>
 			<div class="loader"></div>

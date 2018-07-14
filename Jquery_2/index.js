@@ -9,21 +9,21 @@ $("document").ready(() => {
 
 	$(function() {
 	    $("select").change(function() {
-	        if ($('option:selected', this).text() === 'Title' ){
+	        if ($('option:selected', this).text() === 'Movie Id' ){
 	        	$('.search').attr('placeholder','Enter the Id...');
 	        	$('button').addClass("btn1")
 	        	$('button').removeClass('pick btn2 btn3')
 	        	$('.year').hide()				
 	        }
 
-	        if($('option:selected', this).text() === 'Name' ){
+	        if($('option:selected', this).text() === 'Movie Name' ){
 	        	$('.search').attr('placeholder','Enter the Movie Name...');	
 	     	  	$('.year').hide()
 	     	  	$('button').addClass("btn2")
 	        	$('button').removeClass('pick btn1 btn3')
 	        }
 
-	  		if($('option:selected', this).text() === 'Name & Year' ){
+	  		if($('option:selected', this).text() === 'Movie & Release Year' ){
 	        	$('.search').attr('placeholder','Enter the Name');
 	        	$('.year').show()
 	        	$('button').addClass("btn3")
