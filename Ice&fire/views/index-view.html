@@ -1,0 +1,33 @@
+<div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            Sort By: <select ng-model="myBook.sortColumn" >
+                        <option value="book">Book Asc</option>
+                        <option value="-book">Book Desc</option>
+                        <option value="character">Character Asc</option>
+                        <option value="-character">Character Desc</option>
+                        <option value="house">House Asc</option>
+                        <option value="-house">House Desc</option>
+                      </select>
+                     <br><br> 
+            <div>          
+                <input class="col-xs-12 col-sm-6" ng-model="test.book" type="text" placeholder="Filter By book">
+                <input class="col-xs-12 col-sm-6" ng-model="test.house" type="text" placeholder="Filter By house"><br><br>
+            </div>   
+            <br><br>
+                <table class="table-responsive">
+                    <thead>
+                        <th>Books</th>
+                        <th>Characters</th>
+                        <th>House</th>
+                    </thead>
+                    <tr ng-repeat="name in myBook.names | orderBy:myBook.sortColumn | filter:test ">
+                        <td><book-card></book-card></td>
+                        <td><charater-card></charater-card></td>
+                        <td><house-card></house-card></td>
+                    </tr>
+                </table>
+                </div>
+               
+            </div>
+</div>

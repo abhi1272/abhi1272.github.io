@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse;
+    background-color: #eee;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    color: blue;
+}
+.book{
+	text-align: ;
+}
+b{
+	margin-right: ;
+}
+.book a{
+	text-overflow: ellipsis;
+}

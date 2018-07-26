@@ -1,0 +1,40 @@
+<div class="book well">
+
+	<h2> {{detailName.classBook |  uppercase}} Details </h2>
+	<div ng-if="detailName.classBook === 'book'">
+		 <img class="img-responsive" src="img/book.jpg" alt="books" height="200" width="400"> <br>
+	        <b>Book Name:-</b> {{detailName.name}}<br>
+	        <b>Author:- </b>  {{detailName.authors}}<br>
+	        <b>Isbn:- </b>      {{detailName.isbn}}<br>
+	        <b>Numberofpages:-</b>   {{detailName.numberOfPages}}<br>
+	        <b>Publisher:-</b>   {{detailName.publisher}}<br>
+	        <b>Country:- </b>   {{detailName.country}}<br>
+	        <b>MediaType:-</b>   {{detailName.mediaType}}<br>
+	        <b>Released date:-</b> {{detailName.released}}<br>
+	        <b>Url:-  </b>    <a  href="{{detailName.url}}">Click the link </a> 
+	</div>	
+
+	<div ng-if="detailName.classBook === 'character'">
+		<img class="img-responsive" src="img/char.jpg" alt="books" height="200" width="400"> <br>
+		 <b>Aliases:-</b>     {{detailName.aliases}} <br>
+         <b>Gender:-</b>         {{detailName.gender}} <br>
+         <b>Culture:-</b>          {{detailName.culture}}<br>
+         <b>PlayedBy:-</b>    {{detailName.playedBy}}<br> 
+         <b>Character Name:-</b>		 {{detailName.name}} <br>
+         <b>Url:</b>           <a  href="{{detailName.url}}">Click the link </a> 
+	</div>
+	<div ng-if="detailName.classBook === 'house'">
+		<img class="img-responsive" src="img/house.jpg" alt="books" height="200" width="400"> <br>
+		 <b>House Name:-</b>		 {{detailName.name}} <br>
+         <b>Region:-</b>         {{detailName.region}} <br>
+         <b>Words:-</b>          {{detailName.words}}<br>
+         <b>CoatOfArms:-</b>     {{detailName.coatOfArms}} <br>
+         <b>Overlord:-</b>       {{detailName.overlord}} <br> 
+         <b>CurrentLord:-</b>    {{detailName.currentLord}}<br> 
+         <b>Url:</b>         <a  href="{{detailName.url}}">Click the link  </a> 
+               
+	</div>
+
+</div>
+
+
