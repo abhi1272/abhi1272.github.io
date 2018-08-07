@@ -102,6 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _list_item_list_item_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./list-item/list-item.component */ "./src/app/list-item/list-item.component.ts");
 /* harmony import */ var _myfilter_pipe__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./myfilter.pipe */ "./src/app/myfilter.pipe.ts");
 /* harmony import */ var _select_pipe__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./select.pipe */ "./src/app/select.pipe.ts");
+/* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -120,6 +121,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -131,6 +133,7 @@ var AppModule = /** @class */ (function () {
                 _list_item_list_item_component__WEBPACK_IMPORTED_MODULE_8__["ListItemComponent"],
                 _myfilter_pipe__WEBPACK_IMPORTED_MODULE_9__["MyfilterPipe"],
                 _select_pipe__WEBPACK_IMPORTED_MODULE_10__["SelectPipe"],
+                _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_11__["NotFoundComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -139,8 +142,9 @@ var AppModule = /** @class */ (function () {
                 _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot([
                     { path: 'home', component: _list_list_component__WEBPACK_IMPORTED_MODULE_7__["ListComponent"] },
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
-                    { path: 'item/:url', component: _list_item_list_item_component__WEBPACK_IMPORTED_MODULE_8__["ListItemComponent"] }
-                ])
+                    { path: 'item/:url', component: _list_item_list_item_component__WEBPACK_IMPORTED_MODULE_8__["ListItemComponent"] },
+                    { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_11__["NotFoundComponent"] }
+                ], { useHash: true })
             ],
             providers: [_list_service__WEBPACK_IMPORTED_MODULE_4__["ListService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
@@ -171,7 +175,7 @@ module.exports = "li{\r\n    text-decoration: none;\r\n}\r\n.card-img-top{\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"text-align:center\">\n  <div class=\"card w-75\"  *ngIf=\"itemDetail.url.includes('books')\">\n    <img class=\"card-img-top img-responsive\" src=\"../assets/image/books.jpg\"\n      alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{itemDetail.name}}</h5>\n      <div class=\"card-text\">\n        <ul class=\"list-group list-group-flush\">\n          <li class=\"list-group-item\">{{itemDetail.authors}}</li>\n          <li class=\"list-group-item\">{{itemDetail.numberOfPages}}</li>\n          <li class=\"list-group-item\">{{itemDetail.country}}</li>\n          <li class=\"list-group-item\">{{itemDetail.released | date}}</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div class=\"card w-75\" *ngIf=\"itemDetail.url.includes('characters')\">\n    <img class=\"card-img-top img-responsive\" src=\"../assets/image/characters.jpg\"\n      alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{itemDetail.aliases}}</h5>\n      <div class=\"card-text\">\n        <ul class=\"list-group list-group-flush\">\n          <li class=\"list-group-item\">{{itemDetail.gender}}</li>\n          <li class=\"list-group-item\">{{itemDetail.culture}}</li>\n          <li class=\"list-group-item\">{{itemDetail.books}}</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div class=\"card w-75\" *ngIf=\"itemDetail.url.includes('houses')\">\n    <img class=\"card-img-top img-responsive\" src=\"../assets/image/houses.jpg\"\n      alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{itemDetail.name}}</h5>\n      <div class=\"card-text\">\n        <ul class=\"list-group list-group-flush\">\n          <li class=\"list-group-item\">{{itemDetail.region}}</li>\n          <li class=\"list-group-item\">{{itemDetail.coatOfArms}}</li>\n          <li class=\"list-group-item\">{{itemDetail.overlord}}</li>\n          <li class=\"list-group-item\">{{itemDetail.words}}</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\" style=\"text-align:center\">\n  <div class=\"card w-75\"  *ngIf=\"itemDetail?.url?.includes('books')\">\n    <img class=\"card-img-top img-responsive\" src=\"./assets/image/books.jpg\"\n      alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{itemDetail.name}}</h5>\n      <div class=\"card-text\">\n        <ul class=\"list-group list-group-flush\">\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Authors: </span>{{itemDetail.authors}}</li>\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Pages: </span>{{itemDetail.numberOfPages}}</li>\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Country: </span>{{itemDetail.country}}</li>\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Released: </span>{{itemDetail.released | date}}</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div class=\"card w-75\" *ngIf=\"itemDetail?.url?.includes('characters')\">\n    <img class=\"card-img-top img-responsive\" src=\"./assets/image/characters.jpg\"\n      alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{itemDetail.aliases}}</h5>\n      <div class=\"card-text\">\n        <ul class=\"list-group list-group-flush\">\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Gender: </span>{{itemDetail.gender}}</li>\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Culture: </span>{{itemDetail.culture}}</li>\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Books: </span>{{itemDetail.books}}</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div class=\"card w-75\" *ngIf=\"itemDetail?.url?.includes('houses')\">\n    <img class=\"card-img-top img-responsive\" src=\"./assets/image/houses.jpg\"\n      alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{itemDetail.name}}</h5>\n      <div class=\"card-text\">\n        <ul class=\"list-group list-group-flush\">\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Region: </span>{{itemDetail.region}}</li>\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">CoatOfArms: </span>{{itemDetail.coatOfArms}}</li>\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Overlord: </span>{{itemDetail.overlord}}</li>\n          <li class=\"list-group-item\"><span class=\"font-weight-bold\">Words: </span>{{itemDetail.words}}</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -208,12 +212,9 @@ var ListItemComponent = /** @class */ (function () {
     }
     ListItemComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log('listitem called');
         var url = this._route.snapshot.paramMap.get('url');
-        console.log(url);
         this.ListService.getDetailInformation(url).subscribe(function (data) {
             _this.itemDetail = data;
-            console.log(_this.itemDetail);
         });
     };
     ListItemComponent = __decorate([
@@ -260,29 +261,21 @@ var ListService = /** @class */ (function () {
         this.booksUrl = 'https://anapioficeandfire.com/api/books';
         this.characterUrl = 'https://anapioficeandfire.com/api/characters/';
         this.houseUrl = 'https://anapioficeandfire.com/api/houses';
-        console.log('list service constructor called');
     }
     ListService.prototype.getBooks = function () {
         var response = this._http.get(this.booksUrl);
-        console.log('fetch books');
-        console.log(response);
         return response;
     };
     ListService.prototype.getCharacters = function () {
         var response = this._http.get(this.characterUrl);
-        console.log('fetch charactes');
-        console.log(response);
         return response;
     };
     ListService.prototype.getHouses = function () {
         var response = this._http.get(this.houseUrl);
-        console.log('fetch house');
-        console.log(response);
         return response;
     };
     ListService.prototype.getDetailInformation = function (url) {
         var response = this._http.get(url);
-        console.log(response);
         return response;
     };
     ListService = __decorate([
@@ -305,7 +298,7 @@ var ListService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".blue{\r\n    border-color: blue;\r\n}\r\n.red{\r\n    border-color: red;\r\n}\r\n.green{\r\n    border-color: green;\r\n}\r\np{\r\n    font-family: sans-serif;\r\n}\r\ninput{\r\n    width: 50%;\r\n    margin: 0 0 4vh 1vw;\r\n    padding: 1vh;\r\n    border: 1px solid;\r\n}\r\nselect{\r\n    margin: 0 0 0 8vw;\r\n    padding: 1vh;\r\n}"
+module.exports = ".blue{\r\n    border-color: blue;\r\n}\r\n.red{\r\n    border-color: red;\r\n}\r\n.green{\r\n    border-color: green;\r\n}\r\np{\r\n    font-family: sans-serif;\r\n}\r\ninput{\r\n    width: 50%;\r\n    margin: 0 0 4vh 1vw;\r\n    padding: 1vh;\r\n    border: 1px solid;\r\n}\r\nselect{\r\n     width: 20%;\r\n    margin: 0 0 0 4vw;\r\n    padding: 1vh;\r\n   \r\n}"
 
 /***/ }),
 
@@ -316,7 +309,7 @@ module.exports = ".blue{\r\n    border-color: blue;\r\n}\r\n.red{\r\n    border-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <input [(ngModel)]=\"filterText\" type=\"text\" placeholder=\"Filter..\">\n  <select [(ngModel)]=\"term\">\n    <option value=\"all\" selected>All</option>\n    <option value=\"Book\">BOOKS</option>\n    <option value=\"Characters\">CHARACTERS</option>\n    <option value=\"Houses\">HOUSES</option>\n  </select>\n  <div class=\"row\" *ngFor=\"let item of allList | myfilter: filterText | select : term\"  [hidden]=\"\">\n    <div class=\"card w-75 \" *ngIf=\"item.url.includes('books')\" style=\"border-color:red\">\n      <div class=\"card-body\">\n        <div class=\"row\" >\n          <h5 class=\"card-title col-sm-10\">{{item.name}}</h5>\n          <p  class=\"card=text col-sm-2 text-muted\" >BOOKS</p>\n        </div>\n        <a href=\"#\" class=\"btn btn-primary\" [routerLink]=\"['/item',item.url]\">View More</a>\n      </div>\n    </div>\n    <div class=\"card w-75 \" *ngIf=\"item.url.includes('characters')\" style=\"border-color:blue\">\n      <div class=\"card-body\">\n       <div class=\"row\">\n        <h5 class=\"card-title col-sm-10\">{{item.aliases}}</h5>\n        <p class=\"card=text col-sm-2 text-muted\">CHARACTERS</p>\n       </div>\n        <a href=\"#\" class=\"btn btn-primary\" [routerLink]=\"['/item',item.url]\">View More</a>\n      </div>\n    </div>\n    <div class=\"card w-75 \" *ngIf=\"item.url.includes('houses')\" style=\"border-color:green\">\n      <div class=\"card-body\">\n       <div class=\"row\">\n        <h5 class=\"card-title col-sm-10\">{{item.name}}</h5>\n        <p class=\"card=text col-sm-2 text-muted\">HOUSES</p>\n       </div>\n        <a href=\"#\" class=\"btn btn-primary\" [routerLink]=\"['/item',item.url]\">View More</a>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n <div class=\"row>\">\n  <input [(ngModel)]=\"filterText\" type=\"text\" class=\"col-sm-8\"  placeholder=\"Filter....\">\n  <select [(ngModel)]=\"term\" class=\"col-sm-4\">\n    <option value=\"all\" selected>All</option>\n    <option value=\"Book\">BOOKS</option>\n    <option value=\"Characters\">CHARACTERS</option>\n    <option value=\"Houses\">HOUSES</option>\n  </select>\n </div>\n  <div class=\"row\" *ngFor=\"let item of allList | myfilter: filterText | select : term\"  [hidden]=\"\">\n    <div class=\"card w-75 \" *ngIf=\"item.url.includes('books')\" style=\"border-color:red\">\n      <div class=\"card-body\">\n        <div class=\"row\" >\n          <h5 class=\"card-title col-sm-10\">{{item.name}}</h5>\n          <p  class=\"card=text col-sm-2 text-muted\" >BOOKS</p>\n        </div>\n        <a href=\"#\" class=\"btn btn-primary\" [routerLink]=\"['/item',item.url]\">View More</a>\n      </div>\n    </div>\n    <div class=\"card w-75 \" *ngIf=\"item.url.includes('characters')\" style=\"border-color:blue\">\n      <div class=\"card-body\">\n       <div class=\"row\">\n        <h5 class=\"card-title col-sm-10\">{{item.aliases}}</h5>\n        <p class=\"card=text col-sm-2 text-muted\">CHARACTERS</p>\n       </div>\n        <a href=\"#\" class=\"btn btn-primary\" [routerLink]=\"['/item',item.url]\">View More</a>\n      </div>\n    </div>\n    <div class=\"card w-75 \" *ngIf=\"item.url.includes('houses')\" style=\"border-color:green\">\n      <div class=\"card-body\">\n       <div class=\"row\">\n        <h5 class=\"card-title col-sm-10\">{{item.name}}</h5>\n        <p class=\"card=text col-sm-2 text-muted\">HOUSES</p>\n       </div>\n        <a href=\"#\" class=\"btn btn-primary\" [routerLink]=\"['/item',item.url]\">View More</a>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -348,8 +341,6 @@ var ListComponent = /** @class */ (function () {
         this.ListService = ListService;
         this.allList = [];
         this.term = 'all';
-        console.log(this.term);
-        console.log('list consructer called');
     }
     ListComponent.prototype.ngOnInit = function () {
         this.getBooksList();
@@ -358,10 +349,8 @@ var ListComponent = /** @class */ (function () {
     };
     ListComponent.prototype.getBooksList = function () {
         var _this = this;
-        console.log('books called');
         this.ListService.getBooks().subscribe(function (data) {
             _this.books = data;
-            console.log(_this.books);
             _this.books.sort(function (a, b) {
                 var textA = a.name.toUpperCase();
                 var textB = b.name.toUpperCase();
@@ -449,7 +438,6 @@ var MyfilterPipe = /** @class */ (function () {
     function MyfilterPipe() {
     }
     MyfilterPipe.prototype.transform = function (value, args) {
-        console.log('filter called');
         if (!args) {
             return value;
         }
@@ -471,6 +459,69 @@ var MyfilterPipe = /** @class */ (function () {
         })
     ], MyfilterPipe);
     return MyfilterPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/not-found/not-found.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/not-found/not-found.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/not-found/not-found.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/not-found/not-found.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 class=\"text-center\">\n  Page Not Found\n</h1>"
+
+/***/ }),
+
+/***/ "./src/app/not-found/not-found.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/not-found/not-found.component.ts ***!
+  \**************************************************/
+/*! exports provided: NotFoundComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotFoundComponent", function() { return NotFoundComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NotFoundComponent = /** @class */ (function () {
+    function NotFoundComponent() {
+    }
+    NotFoundComponent.prototype.ngOnInit = function () {
+    };
+    NotFoundComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-not-found',
+            template: __webpack_require__(/*! ./not-found.component.html */ "./src/app/not-found/not-found.component.html"),
+            styles: [__webpack_require__(/*! ./not-found.component.css */ "./src/app/not-found/not-found.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], NotFoundComponent);
+    return NotFoundComponent;
 }());
 
 
