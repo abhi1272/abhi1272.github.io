@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".select{\r\n    margin: 1.5vh 0 -4vw;\r\n    border-radius: 20%;\r\n}\r\n\r\n.filter{\r\n    margin-left: 4vw;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.card{\r\n    width: 100%;\r\n    margin-left: 2vw;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.card-img-top{\r\n    height: 40vh;\r\n    width: 100%;\r\n}\r\n\r\n.clickCurrency{\r\n    text-decoration: none;\r\n    color: black;\r\n}\r\n\r\n.head{\r\n    font-family: sans-serif;\r\n    color: grey;\r\n}\r\n"
+module.exports = ".filter{\r\n    margin-left: 4vw;\r\n    margin-bottom: 4vh;\r\n}\r\n.card{\r\n    width: 100%;\r\n    margin-left: 2vw;\r\n    margin-bottom: 1vh;\r\n}\r\n.card-img-top{\r\n    height: 40vh;\r\n    width: 100%;\r\n}\r\n.clickCurrency{\r\n    text-decoration: none;\r\n    color: black;\r\n}\r\n.head{\r\n    font-family: sans-serif;\r\n    color: grey;\r\n}\r\n"
 
 /***/ }),
 
