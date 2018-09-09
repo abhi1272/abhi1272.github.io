@@ -1,0 +1,166 @@
+[
+  {
+    "type": "get",
+    "url": "/api/v1/cart/add/:id",
+    "title": "Add Product to cart",
+    "version": "0.0.1",
+    "group": "create",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as query parameter, body parameter or as a header)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"cartProduct added\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t name:String,\n                         price:Number,\n                         uniqueId:String,\n                         quantitiy:Number,\n                         createdTime:{type:Date,default:Date.now()},\n                         modifiedTime:{type:Date,default:Date.now()},\n\t\t\t\t\t}\n\t    \t\t]\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"product not found\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./routes/cart.js",
+    "groupTitle": "create",
+    "name": "GetApiV1CartAddId"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/cart/delete/:id",
+    "title": "Delete Product",
+    "version": "0.0.1",
+    "group": "delete",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as query parameter, body parameter or as a header)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"cartProduct Deleted\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t name:String,\n                         price:Number,\n                         uniqueId:String,\n                         quantitiy:Number,\n                         createdTime:{type:Date,default:Date.now()},\n                         modifiedTime:{type:Date,default:Date.now()},\n\t\t\t\t\t}\n\t    \t\t]\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"product not found\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./routes/cart.js",
+    "groupTitle": "delete",
+    "name": "GetApiV1CartDeleteId"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/cart/all",
+    "title": "Get all cartProducts",
+    "version": "0.0.1",
+    "group": "read",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as query parameter, body parameter or as a header)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"All cartProduct Details Found\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t name:String,\n                         price:Number,\n                         uniqueId:String,\n                         quantitiy:Number,\n                         createdTime:{type:Date,default:Date.now()},\n                         modifiedTime:{type:Date,default:Date.now()},\n\t\t\t\t\t}\n\t    \t\t]\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"product not found\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./routes/cart.js",
+    "groupTitle": "read",
+    "name": "GetApiV1CartAll"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/cart/update/:id",
+    "title": "Update Product",
+    "version": "0.0.1",
+    "group": "update",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as query parameter, body parameter or as a header)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"cartProduct Updated\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t name:String,\n                         price:Number,\n                         uniqueId:String,\n                         quantitiy:Number,\n                         createdTime:{type:Date,default:Date.now()},\n                         modifiedTime:{type:Date,default:Date.now()},\n\t\t\t\t\t}\n\t    \t\t]\n\t    \t}\n\t\t}\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"product not found\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./routes/cart.js",
+    "groupTitle": "update",
+    "name": "GetApiV1CartUpdateId"
+  }
+]
