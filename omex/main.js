@@ -455,8 +455,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var ProductService = /** @class */ (function () {
     function ProductService(_http) {
         this._http = _http;
-        //public baseUrl = 'http://localhost:8080/api/v1/products'
-        this.baseUrl = 'http://b0bbc93c.ngrok.io/api/v1/products';
+        this.baseUrl = 'http://localhost:8080/api/v1/products';
         console.log('product service called');
     }
     //excpation handle
