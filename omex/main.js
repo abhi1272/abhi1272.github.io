@@ -205,7 +205,7 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot([
                     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] },
-                    { path: '*', redirectTo: 'home', pathMatch: 'full' },
+                    { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_8__["AboutComponent"] },
                     { path: 'create', component: _create_create_component__WEBPACK_IMPORTED_MODULE_9__["CreateComponent"] },
                     { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_10__["NotFoundComponent"] }
@@ -303,7 +303,7 @@ module.exports = ".list-group-item{\r\n    margin-top: -2vh;\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\" class='row'>\n    <li class=\"list-group-item col-md-4\">ProductName</li>\n    <li class=\"list-group-item col-md-2\">Batch</li>\n    <li class=\"list-group-item col-md-2\">Expiry</li>\n    <li class=\"list-group-item col-md-2\">Quantity</li>\n    <li class=\"list-group-item col-md-2\">Company</li>\n  </ul>\n  <ul *ngFor=\"let product of allProducts\" class=\"list-group\" class='row'>\n    <li class=\"list-group-item col-md-4\">{{product.ProductName}}</li>\n    <li class=\"list-group-item col-md-2\">{{product.Batch}}</li>\n    <li class=\"list-group-item col-md-2\">{{product.Expiry}}</li>\n    <li class=\"list-group-item col-md-2\">{{product.Quantity}}</li>\n    <li class=\"list-group-item col-md-2\">{{product.company.substr(0,4)}}</li>\n  </ul>\n</div>"
+module.exports = "<div class=\"container\">\n  <h2>All Product List</h2>\n  <ul class=\"list-group\" class='row'>\n    <li class=\"list-group-item col-md-4\">ProductName</li>\n    <li class=\"list-group-item col-md-2\">Batch</li>\n    <li class=\"list-group-item col-md-2\">Expiry</li>\n    <li class=\"list-group-item col-md-2\">Quantity</li>\n    <li class=\"list-group-item col-md-2\">Company</li>\n  </ul>\n  <ul *ngFor=\"let product of allProducts\" class=\"list-group\" class='row'>\n    <li class=\"list-group-item col-md-4\">{{product.ProductName}}</li>\n    <li class=\"list-group-item col-md-2\">{{product.Batch}}</li>\n    <li class=\"list-group-item col-md-2\">{{product.Expiry}}</li>\n    <li class=\"list-group-item col-md-2\">{{product.Quantity}}</li>\n    <li class=\"list-group-item col-md-2\">{{product.company.substr(0,4)}}</li>\n  </ul>\n</div>"
 
 /***/ }),
 
