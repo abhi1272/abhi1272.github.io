@@ -580,8 +580,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Barh\Desktop\Awazing_Pharma\Awazing\src\styles.css */"./src/styles.css");
-module.exports = __webpack_require__(/*! C:\Users\Barh\Desktop\Awazing_Pharma\Awazing\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! C:\Users\Barh\Desktop\Awazing_Pharma\Awzing\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\Barh\Desktop\Awazing_Pharma\Awzing\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 
 /***/ })
