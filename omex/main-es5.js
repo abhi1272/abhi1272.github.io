@@ -28,7 +28,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <h3 style=\"text-align: center;color: blue\">Omex Pharma</h3>\n    <div class=\"row\">\n        <div class=\"col-md-2\"><a  class=\"nav\" routerLink='/products'>Products</a></div>\n        <div class=\"col-md-2\"><a  class=\"nav active\" routerLink='/customers' >Customers</a></div>\n        <div class=\"col-md-2\"><a  class=\"nav\" routerLink='/bills'>Bills</a></div>\n        <div class=\"col-md-2\"><a  class=\"nav\" routerLink='/report'>Report</a></div>\n    </div>\n    <!-- <ul class=\"nav\">\n        <li class=\"nav-item\">\n            <a class=\"nav-link active\" routerLink='/products'>Products</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink='/customers'>Customers</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink='/bills'>Bills</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink='/report'>Report</a>\n        </li>\n    </ul> -->\n</div>\n<router-outlet></router-outlet>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <h3 style=\"text-align: center;color: blue\">Omex Pharma</h3>\n    <div class=\"row\">\n        <div class=\"col-md-2\"><a  class=\"nav\" routerLink='/products'>Products</a></div>\n        <div class=\"col-md-2\"><a  class=\"nav active\" routerLink='/customers' >Customers</a></div>\n        <div class=\"col-md-2\"><a  class=\"nav\" routerLink='/bills'>Bills</a></div>\n        <div class=\"col-md-2\"><a  class=\"nav\" routerLink='/report'>Report</a></div>\n    </div>\n    <!-- <ul class=\"nav\">\n        <li class=\"nav-item\">\n            <a class=\"nav-link active\" routerLink='/products'>Products</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink='/customers'>Customers</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink='/bills'>Bills</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink='/report'>Report</a>\n        </li>\n    </ul> -->\n</div>\n\n<router-outlet></router-outlet>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/bill/bill.component.html": 
@@ -39,7 +39,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<br>\n<p class=\"container\">\n    Customer Name: <input type=\"text\" placeholder=\"search...\" [(ngModel)]=\"searchValue\">\n</p>\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"card col-sm-3\" *ngFor=\"let bill of billDataArr | search: searchValue\" style=\"width: 18rem;\">\n            <div class=\"card-header\">\n                <a [routerLink]=\"['/payment',bill._id]\">{{ bill.Customer }}</a>\n            </div>\n            <ul class=\"list-group list-group-flush\">\n                <li class=\"list-group-item\">Bill_No: {{ bill.Bill_No }}</li>\n                <li class=\"list-group-item\">Amount: &#x20b9; {{ bill.billAmount }}</li>\n                <li class=\"list-group-item\">Place: {{bill.Address}}</li>\n                <li class=\"list-group-item\">Date: {{bill.Date}}</li>\n                <li class=\"list-group-item\">Time: {{bill.Time}}</li>\n                <li class=\"list-group-item\">Payments: {{bill.paymentIds.length}}</li>\n            </ul>\n        </div>\n        &nbsp;\n    </div>\n</div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<br>\n<div class=\"container\" *ngIf=\"billDataArr\">\n    <div class=\"row\">\n        <div class=\"col-sm-6\">\n            Bill No: <input type=\"text\" placeholder=\"search...\" [(ngModel)]=\"temp\">\n        </div>\n        <div class=\"col-sm-6\">\n            Customer Name: <input type=\"text\" placeholder=\"search...\" [(ngModel)]=\"searchValue\">\n        </div>\n    </div>\n</div>\n\n\n<div class=\"container\" *ngIf=\"!billDataArr\">\n    <div class=\"ring\">\n        Loading\n        <span></span>\n    </div>\n</div>\n\n<div class=\"container\" *ngIf=\"billDataArr\">\n    <div class=\"row\">\n        <div class=\"card col-sm-3\" *ngFor=\"let bill of billDataArr | search: searchValue | billFilter : temp\"\n            style=\"width: 18rem;\">\n            <div class=\"card-header\">\n                <a [routerLink]=\"['/payment',bill._id]\">{{ bill.Customer }}</a>\n            </div>\n            <ul class=\"list-group list-group-flush\">\n                <li class=\"list-group-item\">Bill_No: {{ bill.Bill_No }}</li>\n                <li class=\"list-group-item\">Amount: &#x20b9; {{ bill.billAmount }}</li>\n                <li class=\"list-group-item\">Place: {{bill.Address}}</li>\n                <li class=\"list-group-item\">Date: {{bill.Date}}</li>\n                <li class=\"list-group-item\">Time: {{bill.Time}}</li>\n                <li class=\"list-group-item\">Payments: {{bill.paymentIds.length}}</li>\n            </ul>\n        </div>\n        &nbsp;\n    </div>\n</div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/customer/customer.component.html": 
@@ -50,7 +50,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\" *ngIf=\"customerDataArr\">\n        <div class=\"card col-sm-3\" *ngFor=\"let customer of customerDataArr\" style=\"width: 18rem;\">\n            <div class=\"card-header\">\n                {{ customer.Customer_Name }}\n            </div>\n            <ul class=\"list-group list-group-flush\">\n                <li class=\"list-group-item\">Street: {{ customer.Address }}</li>\n                <li class=\"list-group-item\">Place: {{ customer.Place }}</li>\n                <li class=\"list-group-item\">Gst: {{customer.GSTIN}}</li>\n            </ul>\n        </div>\n        &nbsp;\n    </div>\n</div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<br>\n<div class=\"container\" *ngIf=\"customerDataArr\">\n    Customer Name: <input type=\"text\" placeholder=\"search...\" [(ngModel)]=\"searchValue\">\n</div>\n\n<div class=\"container\">\n    <div class=\"row\" *ngIf=\"customerDataArr\">\n        <div class=\"card col-sm-3\" *ngFor=\"let customer of customerDataArr | customerFilter : searchValue\" style=\"width: 18rem;\">\n            <div class=\"card-header\">\n                {{ customer.Customer_Name }}\n            </div>\n            <ul class=\"list-group list-group-flush\">\n                <li class=\"list-group-item\">Street: {{ customer.Address }}</li>\n                <li class=\"list-group-item\">Place: {{ customer.Place }}</li>\n                <li class=\"list-group-item\">Gst: {{customer.GSTIN}}</li>\n            </ul>\n        </div>\n        &nbsp;\n    </div>\n</div>\n\n<!-- loader -->\n\n<div class=\"container\" *ngIf=\"!customerDataArr\">\n\t<div class=\"ring\">\n\t\tLoading\n\t\t<span></span>\n\t</div>\n</div>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/payment/payment.component.html": 
@@ -61,7 +61,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" *ngIf=\"billData\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h5 class=\"heading\">{{billData.Customer}} - {{billData.Bill_No}} - &#x20b9;{{billData.billAmount}}</h5>\n            <!-- <di class=\"row\">\n                <div class=\"col\">Bill No</div>\n                <div class=\"col\">Bill No</div>\n                <div class=\"col\">Bill No</div>\n                <div class=\"col\">Bill No</div>\n                <div class=\"col\">Bill No</div>\n            </di> -->\n            \n            <table class=\"table\">\n                <thead>\n                    <tr class=\"row\">\n                        <th class=\"col\">Bill No</th>\n                        <th class=\"col\">BillAmt</th>\n                        <th class=\"col\">Paid</th>\n                        <th class=\"col\">Rest</th>\n                        <th class=\"col\">Date</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr class=\"row\" *ngFor=\"let bill of paymemntHistory; let i = index\">\n                        <td class=\"col\">{{ i + 1 }}</td>\n                        <td class=\"col\">{{ bill.billAmount }}</td>\n                        <td class=\"col\">{{ bill.paidAmount }}</td>\n                        <td class=\"col\">{{ bill.restAmount }}</td>\n                        <td class=\"col\">{{ bill.createdAt | date: \"M/d/yy\" }}</td>\n                    </tr>\n                    <tr>\n                        <div class=\"row\">\n                                Paid Amount: <input type=\"number\" name=\"paidAmount\" #paidAmount>\n                                <button class=\"btn btn-primary\" (click)=\"addAmount(paidAmount.value)\">Add</button>\n                        </div>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    </div>\n</div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" *ngIf=\"!billData\">\n\t<div class=\"ring\">\n\t\tLoading\n\t\t<span></span>\n\t</div>\n</div>\n\n<div class=\"container\" *ngIf=\"billData\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h5 class=\"heading\">{{billData.Customer}} - {{billData.Bill_No}} - &#x20b9;{{billData.billAmount}}</h5>\n            <!-- <di class=\"row\">\n                <div class=\"col\">Bill No</div>\n                <div class=\"col\">Bill No</div>\n                <div class=\"col\">Bill No</div>\n                <div class=\"col\">Bill No</div>\n                <div class=\"col\">Bill No</div>\n            </di> -->\n            \n            <table class=\"table\">\n                <thead>\n                    <tr class=\"row\">\n                        <th class=\"col\">Sr. No</th>\n                        <th class=\"col\">Paid</th>\n                        <th class=\"col\">Rest</th>\n                        <th class=\"col\">Date</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr class=\"row\" *ngFor=\"let bill of paymemntHistory; let i = index\">\n                        <td class=\"col\">{{ i + 1 }}</td>\n                        <td class=\"col\">{{ bill.paidAmount }}</td>\n                        <td class=\"col\">{{ bill.restAmount }}</td>\n                        <td class=\"col\">{{ bill.createdAt | date: \"M/d/yy\" }}</td>\n                    </tr>\n                    <tr>\n                        <div class=\"row\">\n                                Paid Amount: <input type=\"number\" name=\"paidAmount\" #paidAmount>\n                                <button class=\"btn btn-primary\" (click)=\"addAmount(paidAmount.value)\">Add</button>\n                        </div>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    </div>\n</div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/product/product.component.html": 
@@ -72,7 +72,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\" *ngIf=\"productData\">\n        <div class=\"card col-sm-3\" *ngFor=\"let product of productData.data\" style=\"width: 18rem;\">\n            <div class=\"card-header\">\n                {{ product.Item_Name }}\n            </div>\n            <ul class=\"list-group list-group-flush\">\n                <li class=\"list-group-item\">Mrp: {{ product.Mrp }}</li>\n                <li class=\"list-group-item\">Quantity: {{ product.Quantity }}</li>\n                <li class=\"list-group-item\">Batch: {{product.Batch}}</li>\n                <li class=\"list-group-item\">Exp_Dt: {{product.Exp_Dt}}</li>\n            </ul>\n        </div>\n        &nbsp;\n    </div>\n</div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<br>\n<div class=\"container\" *ngIf=\"productData\">\n    <div class=\"row\">\n        <div class=\"col-sm-6\">\n                Product Name: <input type=\"text\" placeholder=\"search...\" [(ngModel)]=\"temp\">\n        </div>\n        <div class=\"col-sm-6\">\n                Company Name: <input type=\"text\" placeholder=\"search...\" [(ngModel)]=\"searchValue\">\n        </div>\n    </div>\n</div>\n\n<div class=\"container\" *ngIf=\"!productData\">\n\t<div class=\"ring\">\n\t\tLoading\n\t\t<span></span>\n\t</div>\n</div>\n\n<div class=\"container\">\n    <div class=\"row\" *ngIf=\"productData\">\n        <div class=\"card col-sm-3\" *ngFor=\"let product of productData.data | companyFilter : searchValue | productFilter :temp\" style=\"width: 18rem;\">\n            <div class=\"card-header\">\n                {{ product.Item_Name }}\n            </div>\n            <ul class=\"list-group list-group-flush\">    \n                <li class=\"list-group-item\">Mrp: {{ product.Mrp }}</li>\n                <li class=\"list-group-item\">Quantity: {{ product.Quantity }}</li>\n                <li class=\"list-group-item\">Batch: {{product.Batch}}</li>\n                <li class=\"list-group-item\">Exp_Dt: {{product.Exp_Dt}}</li>\n                <li class=\"list-group-item\">Company: {{ product.Comp_Code }}</li>\n            </ul>\n        </div>\n        &nbsp;\n    </div>\n</div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/report/report.component.html": 
@@ -482,6 +482,10 @@
             /* harmony import */ var _report_report_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./report/report.component */ "./src/app/report/report.component.ts");
             /* harmony import */ var _payment_payment_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./payment/payment.component */ "./src/app/payment/payment.component.ts");
             /* harmony import */ var _search_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./search.pipe */ "./src/app/search.pipe.ts");
+            /* harmony import */ var _pipes_bill_filter_pipe__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pipes/bill-filter.pipe */ "./src/app/pipes/bill-filter.pipe.ts");
+            /* harmony import */ var _pipes_customer_filter_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pipes/customer-filter.pipe */ "./src/app/pipes/customer-filter.pipe.ts");
+            /* harmony import */ var _pipes_product_filter_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pipes/product-filter.pipe */ "./src/app/pipes/product-filter.pipe.ts");
+            /* harmony import */ var _pipes_company_filter_pipe__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pipes/company-filter.pipe */ "./src/app/pipes/company-filter.pipe.ts");
             // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
             var AppModule = /** @class */ (function () {
                 function AppModule() {
@@ -497,7 +501,11 @@
                         _report_report_component__WEBPACK_IMPORTED_MODULE_10__["ReportComponent"],
                         _payment_payment_component__WEBPACK_IMPORTED_MODULE_11__["PaymentComponent"],
                         _bill_bill_component__WEBPACK_IMPORTED_MODULE_9__["BillComponent"],
-                        _search_pipe__WEBPACK_IMPORTED_MODULE_12__["SearchPipe"]
+                        _search_pipe__WEBPACK_IMPORTED_MODULE_12__["SearchPipe"],
+                        _pipes_bill_filter_pipe__WEBPACK_IMPORTED_MODULE_13__["BillFilterPipe"],
+                        _pipes_customer_filter_pipe__WEBPACK_IMPORTED_MODULE_14__["CustomerFilterPipe"],
+                        _pipes_product_filter_pipe__WEBPACK_IMPORTED_MODULE_15__["ProductFilterPipe"],
+                        _pipes_company_filter_pipe__WEBPACK_IMPORTED_MODULE_16__["CompanyFilterPipe"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -520,7 +528,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = (".card-header{\n    font-weight: bold;\n}\n.card{\n    border: 1px solid white;\n    margin-bottom: 4vh;\n    padding: 25px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYmlsbC9iaWxsLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHVCQUF1QjtJQUN2QixrQkFBa0I7SUFDbEIsYUFBYTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2JpbGwvYmlsbC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmQtaGVhZGVye1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuLmNhcmR7XG4gICAgYm9yZGVyOiAxcHggc29saWQgd2hpdGU7XG4gICAgbWFyZ2luLWJvdHRvbTogNHZoO1xuICAgIHBhZGRpbmc6IDI1cHg7XG59Il19 */");
+            /* harmony default export */ __webpack_exports__["default"] = (".card-header{\n    font-weight: bold;\n}\n.card{\n    border: 1px solid white;\n    margin-bottom: 4vh;\n    padding: 25px;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYmlsbC9iaWxsLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHVCQUF1QjtJQUN2QixrQkFBa0I7SUFDbEIsYUFBYTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2JpbGwvYmlsbC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmQtaGVhZGVye1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuLmNhcmR7XG4gICAgYm9yZGVyOiAxcHggc29saWQgd2hpdGU7XG4gICAgbWFyZ2luLWJvdHRvbTogNHZoO1xuICAgIHBhZGRpbmc6IDI1cHg7XG59XG5cbiJdfQ== */");
             /***/ 
         }),
         /***/ "./src/app/bill/bill.component.ts": 
@@ -595,7 +603,6 @@
                 CustomerComponent.prototype.customerData = function () {
                     var _this = this;
                     this.pharma.getCustomerData().subscribe(function (data) {
-                        console.log(data);
                         _this.customerDataArr = data;
                     });
                 };
@@ -703,10 +710,10 @@
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             var PharmaService = /** @class */ (function () {
+                // public baseUrl = 'https://omexbackend.herokuapp.com/api/v1';
                 function PharmaService(http) {
                     this.http = http;
-                    // public baseUrl = 'http://localhost:5000/api/v1'
-                    this.baseUrl = 'https://omexbackend.herokuapp.com/api/v1';
+                    this.baseUrl = 'http://localhost:5000/api/v1';
                 }
                 PharmaService.prototype.getProductData = function () {
                     return this.http.get(this.baseUrl + "/products");
@@ -736,6 +743,174 @@
                     providedIn: 'root'
                 })
             ], PharmaService);
+            /***/ 
+        }),
+        /***/ "./src/app/pipes/bill-filter.pipe.ts": 
+        /*!*******************************************!*\
+          !*** ./src/app/pipes/bill-filter.pipe.ts ***!
+          \*******************************************/
+        /*! exports provided: BillFilterPipe */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BillFilterPipe", function () { return BillFilterPipe; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var BillFilterPipe = /** @class */ (function () {
+                function BillFilterPipe() {
+                }
+                BillFilterPipe.prototype.transform = function (value) {
+                    var args = [];
+                    for (var _i = 1; _i < arguments.length; _i++) {
+                        args[_i - 1] = arguments[_i];
+                    }
+                    if (!args[0]) {
+                        return value;
+                    }
+                    else {
+                        var searhText_1 = args[0].toLowerCase();
+                        return value.filter(function (item) {
+                            if (item.Bill_No !== null) {
+                                if (item.Bill_No.toLowerCase().includes(searhText_1)) {
+                                    return item;
+                                }
+                            }
+                        });
+                    }
+                };
+                return BillFilterPipe;
+            }());
+            BillFilterPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+                    name: 'billFilter'
+                })
+            ], BillFilterPipe);
+            /***/ 
+        }),
+        /***/ "./src/app/pipes/company-filter.pipe.ts": 
+        /*!**********************************************!*\
+          !*** ./src/app/pipes/company-filter.pipe.ts ***!
+          \**********************************************/
+        /*! exports provided: CompanyFilterPipe */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompanyFilterPipe", function () { return CompanyFilterPipe; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var CompanyFilterPipe = /** @class */ (function () {
+                function CompanyFilterPipe() {
+                }
+                CompanyFilterPipe.prototype.transform = function (value) {
+                    var args = [];
+                    for (var _i = 1; _i < arguments.length; _i++) {
+                        args[_i - 1] = arguments[_i];
+                    }
+                    if (!args[0]) {
+                        return value;
+                    }
+                    else {
+                        var searhText_2 = args[0].toLowerCase();
+                        return value.filter(function (item) {
+                            if (item.Comp_Code !== null) {
+                                if (item.Comp_Code.toLowerCase().includes(searhText_2)) {
+                                    return item;
+                                }
+                            }
+                        });
+                    }
+                };
+                return CompanyFilterPipe;
+            }());
+            CompanyFilterPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+                    name: 'companyFilter'
+                })
+            ], CompanyFilterPipe);
+            /***/ 
+        }),
+        /***/ "./src/app/pipes/customer-filter.pipe.ts": 
+        /*!***********************************************!*\
+          !*** ./src/app/pipes/customer-filter.pipe.ts ***!
+          \***********************************************/
+        /*! exports provided: CustomerFilterPipe */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerFilterPipe", function () { return CustomerFilterPipe; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var CustomerFilterPipe = /** @class */ (function () {
+                function CustomerFilterPipe() {
+                }
+                CustomerFilterPipe.prototype.transform = function (value) {
+                    var args = [];
+                    for (var _i = 1; _i < arguments.length; _i++) {
+                        args[_i - 1] = arguments[_i];
+                    }
+                    if (!args[0]) {
+                        return value;
+                    }
+                    else {
+                        var searhText_3 = args[0].toLowerCase();
+                        return value.filter(function (item) {
+                            if (item.Customer_Name !== null) {
+                                if (item.Customer_Name.toLowerCase().includes(searhText_3)) {
+                                    return item;
+                                }
+                            }
+                        });
+                    }
+                };
+                return CustomerFilterPipe;
+            }());
+            CustomerFilterPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+                    name: 'customerFilter'
+                })
+            ], CustomerFilterPipe);
+            /***/ 
+        }),
+        /***/ "./src/app/pipes/product-filter.pipe.ts": 
+        /*!**********************************************!*\
+          !*** ./src/app/pipes/product-filter.pipe.ts ***!
+          \**********************************************/
+        /*! exports provided: ProductFilterPipe */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductFilterPipe", function () { return ProductFilterPipe; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var ProductFilterPipe = /** @class */ (function () {
+                function ProductFilterPipe() {
+                }
+                ProductFilterPipe.prototype.transform = function (value) {
+                    var args = [];
+                    for (var _i = 1; _i < arguments.length; _i++) {
+                        args[_i - 1] = arguments[_i];
+                    }
+                    if (!args[0]) {
+                        return value;
+                    }
+                    else {
+                        var searhText_4 = args[0].toLowerCase();
+                        return value.filter(function (item) {
+                            if (item.Item_Name !== null) {
+                                if (item.Item_Name.toLowerCase().includes(searhText_4)) {
+                                    return item;
+                                }
+                            }
+                        });
+                    }
+                };
+                return ProductFilterPipe;
+            }());
+            ProductFilterPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+                    name: 'productFilter'
+                })
+            ], ProductFilterPipe);
             /***/ 
         }),
         /***/ "./src/app/product/product.component.css": 
@@ -847,10 +1022,10 @@
                         return value;
                     }
                     else {
-                        var searhText_1 = searchValue[0].toLowerCase();
+                        var searhText_5 = searchValue[0].toLowerCase();
                         return value.filter(function (item) {
                             if (item.Customer !== null) {
-                                if (item.Customer.toLowerCase().includes(searhText_1)) {
+                                if (item.Customer.toLowerCase().includes(searhText_5)) {
                                     return item;
                                 }
                             }
