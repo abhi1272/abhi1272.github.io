@@ -711,10 +711,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let PharmaService = class PharmaService {
-    // public baseUrl = 'https://omexbackend.herokuapp.com/api/v1';
+    public baseUrl = 'https://omexbackend.herokuapp.com/api/v1';
     constructor(http) {
         this.http = http;
-        this.baseUrl = 'http://localhost:5000/api/v1';
+       //  this.baseUrl = 'http://localhost:5000/api/v1';
     }
     getProductData() {
         return this.http.get(`${this.baseUrl}/products`);
